@@ -46,6 +46,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.TextToolsTabPage = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.TextToolsTextBoxesSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.btnTextToolsTrim = new System.Windows.Forms.Button();
             this.notifyIconMenu.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -53,6 +57,13 @@
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.TextToolsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextToolsTextBoxesSplitContainer)).BeginInit();
+            this.TextToolsTextBoxesSplitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // myNotifyIcon
@@ -88,6 +99,7 @@
             // 
             this.tabMain.Controls.Add(this.tabPage1);
             this.tabMain.Controls.Add(this.tabPage2);
+            this.tabMain.Controls.Add(this.TextToolsTabPage);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
@@ -207,6 +219,54 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // TextToolsTabPage
+            // 
+            this.TextToolsTabPage.Controls.Add(this.splitContainer1);
+            this.TextToolsTabPage.Location = new System.Drawing.Point(4, 22);
+            this.TextToolsTabPage.Name = "TextToolsTabPage";
+            this.TextToolsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.TextToolsTabPage.Size = new System.Drawing.Size(1013, 520);
+            this.TextToolsTabPage.TabIndex = 2;
+            this.TextToolsTabPage.Text = "Text Tools";
+            this.TextToolsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnTextToolsTrim);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.TextToolsTextBoxesSplitContainer);
+            this.splitContainer1.Size = new System.Drawing.Size(1007, 514);
+            this.splitContainer1.SplitterDistance = 45;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // TextToolsTextBoxesSplitContainer
+            // 
+            this.TextToolsTextBoxesSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TextToolsTextBoxesSplitContainer.Location = new System.Drawing.Point(0, 0);
+            this.TextToolsTextBoxesSplitContainer.Name = "TextToolsTextBoxesSplitContainer";
+            this.TextToolsTextBoxesSplitContainer.Size = new System.Drawing.Size(1007, 465);
+            this.TextToolsTextBoxesSplitContainer.SplitterDistance = 493;
+            this.TextToolsTextBoxesSplitContainer.TabIndex = 0;
+            // 
+            // btnTextToolsTrim
+            // 
+            this.btnTextToolsTrim.Location = new System.Drawing.Point(5, 3);
+            this.btnTextToolsTrim.Name = "btnTextToolsTrim";
+            this.btnTextToolsTrim.Size = new System.Drawing.Size(76, 39);
+            this.btnTextToolsTrim.TabIndex = 0;
+            this.btnTextToolsTrim.Text = "Trim";
+            this.btnTextToolsTrim.UseVisualStyleBackColor = true;
+            this.btnTextToolsTrim.Click += new System.EventHandler(this.btnTextToolsTrim_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +283,13 @@
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.TextToolsTabPage.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TextToolsTextBoxesSplitContainer)).EndInit();
+            this.TextToolsTextBoxesSplitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -244,5 +311,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.TabPage TextToolsTabPage;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer TextToolsTextBoxesSplitContainer;
+        private System.Windows.Forms.Button btnTextToolsTrim;
     }
 }

@@ -20,6 +20,8 @@ namespace ScriptKeys
         private MyApp myApp;
         private Dictionary<string, Script> scripts = new Dictionary<string, Script>(StringComparer.InvariantCultureIgnoreCase);
         private FastColoredTextBox editor;
+        private FastColoredTextBox editor1;
+        private FastColoredTextBox editor2;
 
         public FastColoredTextBox Editor
         {
@@ -43,6 +45,8 @@ namespace ScriptKeys
             editor.Language = FastColoredTextBoxNS.Language.CSharp;
             tableLayoutPanel2.Controls.Add(editor, 0, 1);
 
+            CreateTextToolsEditors();
+
             this.myApp = myApp;
 
             InitScripts();
@@ -50,6 +54,20 @@ namespace ScriptKeys
 
             mnuExit.Click += mniExit_Click;
             this.Load += NewHotKeyForm_Load;
+        }
+
+        private void CreateTextToolsEditors()
+        {
+            editor1  = new FastColoredTextBox();
+            editor1.Dock = DockStyle.Fill;
+            editor1.Language = Language.Custom;
+            TextToolsTextBoxesSplitContainer.Panel1.Controls.Add(editor1);
+
+            editor2 = new FastColoredTextBox();
+            editor2.Dock = DockStyle.Fill;
+            editor2.Language = Language.Custom;
+            TextToolsTextBoxesSplitContainer.Panel2.Controls.Add(editor2);
+
         }
 
         private void InitScripts()
@@ -153,6 +171,23 @@ namespace ScriptKeys
         private void myNotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();
+        }
+
+        private void btnTextToolsTrim_Click(object sender, EventArgs e)
+        {
+            editor2.Text = TrimLines(editor1.Text);
+        }
+
+        private string TrimLines(string text)
+        {
+            var lines = text.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                
+            for (int i=0; i<lines.Length; i++)
+            {
+                lines[i] = lines[i].Trim();
+            }
+
+            return string.Join(Environment.NewLine, lines);
         }
     }
 }
